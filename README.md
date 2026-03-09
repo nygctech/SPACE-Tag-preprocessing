@@ -223,6 +223,3 @@ This should work assuming you have set up the environment correctly; if not, che
 ```
 snakemake -s workflow.snakefile -np
 ```
-
-
->>>>>>> 8e507a8 (Initial commit - copied from https://github.com/heruiyang/spatial_multiome_processing)
