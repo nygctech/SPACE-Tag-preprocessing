@@ -1,4 +1,4 @@
-name: spatial_multiome
+name: SPACE-Tag
 channels:
   - conda-forge
   - bioconda
