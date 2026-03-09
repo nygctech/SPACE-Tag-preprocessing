@@ -17,7 +17,7 @@ This pipeline processes FASTQ files from a SPACE-Tag experiment. In this experim
 First, clone the main branch of the repository to your local machine.
 
 ```
-git clone https://[github.com/heruiyang/spatial_multiome_processing/](https://github.com/nygctech/SPACE-Tag-preprocessing) .
+git clone https://github.com/nygctech/SPACE-Tag-preprocessing.
 cd SPACE-Tag-preprocessing
 ```
 
@@ -57,7 +57,7 @@ The `json` file specifies which spots are part of the tissue and is used to crea
 
 #### `run_type` - Run type specification
 
-This can be set to either `processing` or `debug`. If set to `processing`, `spatial_multiome` will run the preprocessing workflow and generate output objects for downstream analyiss; if set to `debug`, `spatial_multiome` will instead run a debug workflow and generate plots for QC and debugging. Currently, only pA/pT artifact filtering (see below) is implemented in the `debug` workflow. 
+This can be set to either `processing` or `debug`. If set to `processing`, `SPACE-Tag` will run the preprocessing workflow and generate output objects for downstream analyiss; if set to `debug`, `SPACE-Tag` will instead run a debug workflow and generate plots for QC and debugging. Currently, only pA/pT artifact filtering (see below) is implemented in the `debug` workflow. 
 
 ```
 ### Whether to do full run for processing or just debug/QC
@@ -67,7 +67,7 @@ run_type: 'debug'
 
 #### `ref` - Reference genome
 
-`spatial_multiome` uses the `bowtie2` aligner and expects references in a compatible format. If you have a `genome.fa` or `genome.fa.gz` file that contains the genome you would like to align to, run the following command to generate a `bowtie2`-compatible reference:
+`SPACE-Tag` uses the `bowtie2` aligner and expects references in a compatible format. If you have a `genome.fa` or `genome.fa.gz` file that contains the genome you would like to align to, run the following command to generate a `bowtie2`-compatible reference:
 
 ```
 bowtie2-build genome.fa {prefix}
