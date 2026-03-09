@@ -1,0 +1,78 @@
+##########################
+# Input files (required) #
+##########################
+
+sample_fastqs:
+  example:
+    # Read 1 (16bp Visium barcode + 12bm UMI)
+    R1: data/example_r1.fastq.gz
+    # Read 2 (gDNA only)
+    R2: data/example_r2.fastq.gz
+
+sample_alignment_jsons:
+  # Path to SpaceRanger fiducial alignment json - if you want to do automated alignment (currently not implemented), put 'none' 
+  example: data/example.json
+
+### Whether to do full run for processing or just debug/QC
+# options: 'processing', 'debug'
+run_type: 'processing'
+
+# Path and prefix for bowtie2 genome reference
+ref: path/to/ref/and/prefix
+
+###########################################
+# Configuration options for all run types #
+###########################################
+
+### single-end or paired-end mode
+# options: 'se', 'pe'
+mode: 'se'
+
+# structure of read 1
+# if using STCT, default is '(?P<cell_1>.{16})(?P<umi_1>.{12})'
+r1_format: '(?P<cell_1>.{16})(?P<umi_1>.{12})'
+
+# Whether to use UMIs for deduplication
+umi_dedup: False
+
+### Options for MACS2 peak calling
+# FDR threshold for peak calling
+macs2_fdr: 0.05
+
+# Effective genome size
+# Defaults for species:
+#   hs: 2.7e9
+#   mm: 1.87e9
+#   ce: 9e7
+#   dm: 1.2e8
+macs2_genomesize: 1.87e9
+
+####################################################
+# Configuration options for spatial processing run #
+####################################################
+
+# Remove artifact pA/pT peaks
+remove_artifacts: True
+
+# Method to use for removing artifact peaks
+remove_artifacts_method:  'blacklist' # options: 'blacklist', 'poly_a_t'
+
+# Blacklist bed file
+blacklist_file: refs/mm10_noise_blacklist_expand.bed
+
+# Path for text file containing barcode whitelist
+whitelist: refs/visium-v1.txt
+
+# Path for text file containing spatial row/column indices of valid barcodes
+spot_coords: refs/visium-v1_coordinates.txt
+
+#######################################
+# Configuration options for debug run #
+#######################################
+
+window_length: 70
+
+poly_a_t_threshold: 20
+
+# This needs to be specified if remove_artifacts is set!
+genome_fasta: path/to/genome/fasta

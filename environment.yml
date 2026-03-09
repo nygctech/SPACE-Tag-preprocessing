@@ -1,0 +1,23 @@
+name: spatial_multiome
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - snakemake
+  - mamba
+  - python=3.10
+  - ca-certificates
+  - certifi
+  - openssl
+  - bowtie2
+  - umi_tools
+  - r-signac
+  - macs2
+  - samtools
+  - bedtools
+  - bioconductor-ensdb.mmusculus.v79
+  - cutadapt
+  - fastqc
+  - seqtk
+  - picard
