@@ -17,15 +17,15 @@ This pipeline processes FASTQ files from a SPACE-Tag experiment. In this experim
 First, clone the main branch of the repository to your local machine.
 
 ```
-git clone https://github.com/heruiyang/spatial_multiome_processing/ .
-cd spatial_multiome_processing
+git clone https://[github.com/heruiyang/spatial_multiome_processing/](https://github.com/nygctech/SPACE-Tag-preprocessing) .
+cd SPACE-Tag-preprocessing
 ```
 
 The requirements to run the workflow can be found in `environment.yml`. Create a conda environment with the required dependencies and activate it.
 
 ```
 conda env create -f environment.yml
-conda activate spatial_multiome
+conda activate SPACE-Tag
 ```
 
 You're ready to start!
