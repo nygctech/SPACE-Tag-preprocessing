@@ -86,7 +86,7 @@ The workflow has a number of options that can be adjusted. These options are spe
 
 #### `mode` - Paired-end or Single-end mode
 
-Whether to use paired-end or single-end for alignment. If using the STCT protocol, this should be set to `se` by default. If set to `pe`, a compatible `r1_format` must also be set (see below). 
+Whether to use paired-end or single-end for alignment. If using the SPACE-Tag protocol, this should be set to `se` by default. If set to `pe`, a compatible `r1_format` must also be set (see below). 
 
 ```
 ### single-end or paired-end mode
@@ -96,11 +96,11 @@ mode: 'se'
 
 #### `r1_format` - Structure of Read 1
 
-Structure of read one, containing spatial barcode, UMI (optional) and genomic read (optional). This is specified in the `umi_tools` regex format (see [UMI-tools documentation](https://umi-tools.readthedocs.io/en/latest/reference/extract.html#extract-method)). If using the STCT protocol, this should be set to `'(?P<cell_1>.{16})(?P<umi_1>.{12})'` by default, which specifies a 28bp read 1 containing a 16bp spatial barcode followed by a 12bp UMI.
+Structure of read one, containing spatial barcode, UMI (optional) and genomic read (optional). This is specified in the `umi_tools` regex format (see [UMI-tools documentation](https://umi-tools.readthedocs.io/en/latest/reference/extract.html#extract-method)). If using the SPACE-Tag protocol, this should be set to `'(?P<cell_1>.{16})(?P<umi_1>.{12})'` by default, which specifies a 28bp read 1 containing a 16bp spatial barcode followed by a 12bp UMI.
 
 ```
 # structure of read 1
-# if using STCT, default is '(?P<cell_1>.{16})(?P<umi_1>.{12})'
+# if using SPACE-Tag, default is '(?P<cell_1>.{16})(?P<umi_1>.{12})'
 r1_format: '(?P<cell_1>.{16})(?P<umi_1>.{12})'
 ```
 
