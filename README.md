@@ -1,11 +1,9 @@
-<<<<<<< HEAD
+
 # SPACE-Tag-preprocessing
 Snakemake workflow for preprocessing of SPACE-Tag raw data for downstream analysis
-=======
-# spatial_multiome: a Snakemake pipeline to process spatial CUT&Tag and RNA-seq datasets
 
 ## Introduction
-This pipeline processes FASTQ files from a spatial CUT&Tag experiment. In this experiment, R1 contains the spatial barcode (16 bp) and Unique Molecular Identifier (UMI, 12 bp), while R2 contains the genomic sequences. The workflow employs various tools for trimming, mapping, and deduplicating the sequencing reads. Subsequently, the mapped reads are used for peak calling and feature counting. The final output is a set of files for downstream analysis such as using Seurat.
+This pipeline processes FASTQ files from a SPACE-Tag experiment. In this experiment, R1 contains the spatial barcode (16 bp) and Unique Molecular Identifier (UMI, 12 bp), while R2 contains the genomic sequences. The workflow employs various tools for trimming, mapping, and deduplicating the sequencing reads. Subsequently, the mapped reads are used for peak calling and feature counting. The final output is a set of files for downstream analysis such as using Seurat.
 
 ## Table of Contents
 
